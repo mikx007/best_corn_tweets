@@ -60,6 +60,6 @@ html_output = """<!DOCTYPE html>
 <body>
 <blockquote class="twitter-tweet"><a href="https://twitter.com/x/status/"""+y+"""></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>"""
-f = open("twitter_page.html", "w")
+f = open("index.html", "w")
 f.write(html_output)
 f.close()
