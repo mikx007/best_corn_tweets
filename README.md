@@ -5,12 +5,9 @@ you will need to install a few things
 
 pip install requests
 
-this is the library for API requests we are using
-
-
 pip install -U python-dotenv
 
-this will install dot-env which is a library we use to load our dotenv file
+This will install dot-env which is a library we use to load our .env file. Requests is the library we will use for our API calls in python.
 
 If want to run this project on your own computer you will need to initialize a .env file with keys given to you by Twitter for developers.
 This .env file should be formated like the string bellow.
