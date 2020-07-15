@@ -42,7 +42,7 @@ search_headers = {
 search_params = {
     'q': 'Corn',
     'result_type': 'popular',
-    'count': 2,
+    'count': 1,
     'lang': 'en'
 }
 
@@ -52,11 +52,14 @@ search_resp = requests.get(search_url, headers=search_headers, params=search_par
 
 search_resp.status_code
 tweet_data = search_resp.json()
-print '<HTML><HEAD>'
-print '<TITLE>Hello World</TITLE></HEAD>'
-print '<BODY><H1>Hello World</H1>'
-print '<P>Program with'
-print '<A HREF="http://www.python.org/"'
-print '>Python</A> today</BODY></HTML>'
-#for x in tweet_data['statuses']:
-#    print(x['text'] + '\n')
+for x in tweet_data['statuses']:
+    y = x['id_str']
+
+html_output = """<!DOCTYPE html>
+<head></head>
+<body>
+<blockquote class="twitter-tweet"><a href="https://twitter.com/x/status/"""+y+"""></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>"""
+f = open("twitter_page.html", "w")
+f.write(html_output)
+f.close()
