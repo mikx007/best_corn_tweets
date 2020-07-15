@@ -52,5 +52,11 @@ search_resp = requests.get(search_url, headers=search_headers, params=search_par
 
 search_resp.status_code
 tweet_data = search_resp.json()
-for x in tweet_data['statuses']:
-    print(x['text'] + '\n')
+print '<HTML><HEAD>'
+print '<TITLE>Hello World</TITLE></HEAD>'
+print '<BODY><H1>Hello World</H1>'
+print '<P>Program with'
+print '<A HREF="http://www.python.org/"'
+print '>Python</A> today</BODY></HTML>'
+#for x in tweet_data['statuses']:
+#    print(x['text'] + '\n')
