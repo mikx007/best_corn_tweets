@@ -58,7 +58,7 @@ for x in tweet_data['statuses']:
 html_output = """<!DOCTYPE html>
 <head></head>
 <body>
-<blockquote class="twitter-tweet"><a href="https://twitter.com/x/status/"""+y+"""></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><a href="https://twitter.com/x/status/"""+y+""""></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>"""
 f = open("index.html", "w")
 f.write(html_output)
