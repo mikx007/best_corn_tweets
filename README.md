@@ -16,6 +16,9 @@ If want to run this project on your own computer you will need to initialize a .
 This .env file should be formated like the string bellow.
 
 "
+
 consumer_key = "key that was given by twitter"
+
 consumer_secret = "secret given by twitter"
+
 "
