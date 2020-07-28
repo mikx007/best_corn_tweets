@@ -2,6 +2,9 @@ import base64
 from dotenv import load_dotenv
 load_dotenv()
 import os
+import requests
+from string import Template
+
 #dotenv is used to grab the consumer_key and consumer_secret from the .env file
 api_key=os.environ['consumer_key']
 api_secret=os.environ['consumer_secret']
@@ -11,7 +14,6 @@ b64_encoded_key = base64.b64encode(key_secret)
 b64_encoded_key = b64_encoded_key.decode('ascii')
 
 
-import requests
 
 base_url = 'https://api.twitter.com/'
 auth_url = '{}oauth2/token'.format(base_url)
@@ -54,12 +56,12 @@ search_resp.status_code
 tweet_data = search_resp.json()
 for x in tweet_data['statuses']:
     y = x['id_str']
+#The following code is original
+with open("front_page.template", "r") as f:
+    read_page = f.read()
+    s = Template(read_page)
+    with open("index.html", "w") as g:
+        g.write(s.safe_substitute(tweet_id=y))
 
-html_output = """<!DOCTYPE html>
-<head></head>
-<body>
-<blockquote class="twitter-tweet"><a href="https://twitter.com/x/status/"""+y+""""></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</body>"""
-f = open("index.html", "w")
-f.write(html_output)
 f.close()
+g.close()
